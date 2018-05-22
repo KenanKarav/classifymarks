@@ -1,0 +1,6 @@
+Kenan	0
+John	50
+Steve 	60
+Will	75
+Jeff	90
+Craig	100

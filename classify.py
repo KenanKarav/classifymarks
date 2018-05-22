@@ -2,7 +2,7 @@
 
 
 import sys
-
+import unittest
 
 def getData(f):
     results = []
@@ -16,26 +16,30 @@ def thoseInRange(data, lower, upper):
     for [number, mark] in data:
         if lower <= mark <= upper:
             students.append(number)
-    if len(students) = 0: students = ["none"]
+    if len(students) == 0: students = ["none"]
     return students
 
 
 def showRanges(data):
     lower = boundaries[0]
+    candidateRanges = []
     for upper in boundaries[1:]:
         candidates = thoseInRange(data,lower,upper)
         candidates.sort()
         print("Between %s and %s"%(lower,upper))
         for student in candidates:
             print("  "+student)
-        lower=upper
-
-
+        lower=upper + 1 
+        candidateRanges.append(candidates)
+    return candidateRanges
+"""
 fname = open(sys.argv[1])
 boundaries = list(map(int, sys.argv[2:]))
 
 data = getData(fname)
 showRanges(data)
+"""
+
 
 
 
